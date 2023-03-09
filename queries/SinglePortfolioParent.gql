@@ -1,0 +1,14 @@
+query SinglePortfolioParent($slug: String!, $limit: Int = 1) {
+  portfolioParentPageCollection(where: { slug: $slug }, limit: $limit) {
+    items {
+      sys {
+        id
+      }
+      title
+      slug
+      bannerImage {
+        url
+      }
+    }
+  }
+}

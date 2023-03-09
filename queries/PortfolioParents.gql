@@ -1,0 +1,28 @@
+query PortfolioParents {
+  portfolioParentPageCollection {
+    items {
+      sys {
+        id
+      }
+      title
+      slug
+      pageContent
+      bannerImage {
+        sys {
+          id
+        }
+        url
+      }
+      childrenCollection {
+        items {
+          sys {
+            id
+          }
+          title
+          slug
+          projectUrl
+        }
+      }
+    }
+  }
+}

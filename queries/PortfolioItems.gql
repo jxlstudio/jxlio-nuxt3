@@ -1,0 +1,18 @@
+query PortfolioItems {
+  portfolioItemCollection {
+    items {
+      sys {
+        id
+      }
+      title
+      slug
+      pageContent
+      imagesCollection {
+        items {
+          url
+          fileName
+        }
+      }
+    }
+  }
+}
