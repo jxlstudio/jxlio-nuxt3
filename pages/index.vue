@@ -9,7 +9,8 @@
 
     import * as THREE from 'three'
     import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-    import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js'
+    // import { Lensflare, LensflareElement } from 'three/addons/objects/Lensflare.js'
+    // import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js'
     // import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 
     definePageMeta({
@@ -225,6 +226,25 @@
         
         // const dlightHelper = new THREE.DirectionalLightHelper(dlight, 50, whiteLight)
         // scene.add(dlightHelper)
+
+        // const textureLoader = new THREE.TextureLoader()
+        // const textureFlare0 = textureLoader.load( "./lensflare0.png" )
+        // const textureFlare1 = textureLoader.load( "./lensflare2.png" )
+        // const textureFlare2 = textureLoader.load( "./lensflare3.png" )
+
+        // const lensflare = new Lensflare()
+
+        // lensflare.addElement( new LensflareElement( textureFlare0, 512, 0 ) )
+        // lensflare.addElement( new LensflareElement( textureFlare1, 512, 0 ) )
+        // lensflare.addElement( new LensflareElement( textureFlare2, 60, 0.6 ) )
+
+        // light1.add(lensflare)
+        // light2.add(lensflare)
+        // light3.add(lensflare)
+        // light4.add(lensflare)
+        // light5.add(lensflare)
+        // light6.add(lensflare)
+
     }
 
     const addAsteroids = () => {

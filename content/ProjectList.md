@@ -39,6 +39,8 @@ https://tailwindcss.nuxtjs.org/examples/content
 - Weddings
 - Senior Portaits
 - Baby/Family Portraits
+- Architecture
+- Commerical/Product
 
 
 ## Videography
