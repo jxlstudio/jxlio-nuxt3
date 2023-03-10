@@ -23,5 +23,6 @@ const getBannerImage = (img: string | null | undefined) => {
                 <div class="font-black uppercase w-full text-center text-2xl">{{ item?.title }}</div>
             </a>
         </div>
+        <!-- MARKDOWN GENERATOR -->
     </div>
 </template>

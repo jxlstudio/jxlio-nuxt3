@@ -1,5 +1,6 @@
 <template>
     <footer class="bg-gray-900 text-white">
-        Footer will go here
+        <a href="/">HOME</a>
+        <p>Footer will go here</p>
     </footer>
 </template>

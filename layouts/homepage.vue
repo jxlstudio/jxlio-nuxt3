@@ -4,6 +4,6 @@
         <main>
             <slot />
         </main>
-        <VFooter/>
+        <DefaultFooter/>
     </div>
 </template>

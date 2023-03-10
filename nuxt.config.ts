@@ -1,9 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindTypography from '@tailwindcss/typography'
+
 export default defineNuxtConfig({
     ssr: true,
     modules: [
         'nuxt-graphql-client',
-        '@nuxtjs/tailwindcss'
+        '@nuxtjs/tailwindcss',
+        '@nuxt/content'
     ],
     // https://nuxt-graphql-client.web.app/getting-started/quick-start
     'graphql-client': {
@@ -17,6 +20,16 @@ export default defineNuxtConfig({
                 },
                 retainToken: false
             }
+        }
+    },
+    content: {
+        // https://content.nuxtjs.org/api/configuration
+    },
+    tailwindcss: {
+        config: {
+            plugins: [
+                tailwindTypography
+            ]
         }
     }
 })

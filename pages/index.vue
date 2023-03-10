@@ -5,6 +5,7 @@
     // Galaxy Skybox
     // Spaceships STL's as lights
     // Loading Screen
+    // https://v1.image.nuxtjs.org/ FOR SERVING IMAGES
 
     import * as THREE from 'three'
     import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
@@ -29,6 +30,9 @@
     // -
     // -
     // -
+
+    
+    const loadingScreen = ref(true)
 
     const navHeight = 0
 
@@ -106,6 +110,25 @@
         //Add Helpers if devmode enabled
         if (!devMode) {
             addHelpers()
+        }
+
+        // Default LoadingManager Setup
+        THREE.DefaultLoadingManager.onStart = function ( url, itemsLoaded, itemsTotal ) {
+            console.log( 'Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' )
+        }
+
+        THREE.DefaultLoadingManager.onLoad = function ( ) {
+            loadingScreen.value = false
+            console.log( 'Loading Complete!')
+        }
+
+
+        THREE.DefaultLoadingManager.onProgress = function ( url, itemsLoaded, itemsTotal ) {
+            console.log( 'Loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' )
+        }
+
+        THREE.DefaultLoadingManager.onError = function ( url ) {
+            console.log( 'There was an error loading ' + url )
         }
 
         // Add Lights
@@ -318,6 +341,9 @@
     }
 
     onMounted(() => {
+        // Init Loading Screen
+        // loadingScreen = document.getElementById("loading")
+
         // Create Scene & Set Responsive Window Height Minimum
         scene = new THREE.Scene()
         minWindowHeight = 550
@@ -346,17 +372,27 @@
     })
 </script>
 <template>
-    <div>
+    <div id="homepage">
+        <transition name="fade">
+            <div id="loading" v-if="loadingScreen" class="bg-black absolute w-full h-full top-0 left-0 z-50">
+                <!-- <LoadingSpinner class="mx-auto mt-24 w-[48px] h-[48px] p-2 text-white z-50 spinner-center" /> -->
+                <div class="spin"></div>
+            </div>
+        </transition>
         <div id="threejs" class="flex flex-col items-center">
-            <div class="header-content text-white text-center mx-auto w-[85%] md:max-w-[60%] md:w-[500px] z-50">
-                <Logo/>
-                <h1 class="sr-only">Portfolio</h1>
-            </div>
-            <div class="absolute bottom-0 left-0 text-center w-full z-50 pb-10">
-                <a href="#content" class="w-[48px] z-50">
-                    <ChevronDown class="mx-auto w-[48px] h-[48px] p-2 text-white bg-gray-800  rounded-full opacity-50 hover:opacity-90" />
-                </a>
-            </div>
+            <transition name="fade">
+                <div class="header-content text-white text-center mx-auto w-[85%] md:max-w-[60%] md:w-[500px] z-50">
+                    <Logo/>
+                    <h1 class="sr-only">Portfolio</h1>
+                </div>
+            </transition>
+            <transition name="fade">
+                <div class="absolute bottom-0 left-0 text-center w-full z-50 pb-10">
+                    <a href="#content" class="w-[48px] z-50">
+                        <ChevronDown class="mx-auto w-[48px] h-[48px] p-2 text-white bg-gray-800  rounded-full opacity-50 hover:opacity-90" />
+                    </a>
+                </div>
+            </transition>
         </div>
         <div id="content" class="h-[2000px]">Content will go here</div>
     </div>
@@ -364,8 +400,8 @@
 
 <style lang="postcss">
 #threejs {
-    min-height: calc(100vh - 80px);
-    background: #111111;
+    min-height: 100vh;
+    background: #000000;
 }
 #threejs canvas {
     position: relative;
@@ -373,10 +409,52 @@
     max-width: 100% !important;
     cursor: move;
 }
-#threejs .header-content {
+#threejs .header-content, .spinner-center {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+/* .loaded {
+    display: none;
+    transition: display 2.5s linear;
+} */
+.fade-in {
+    animation: fadeIn 0.5s;
+    /* animation-delay: 1s; */
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+.fade-enter-from, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+}
+@keyframes spinner {
+    0% {
+        transform: translate3d(-50%, -50%, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate3d(-50%, -50%, 0) rotate(360deg);
+    }
+}
+.spin::before {
+    animation: 1.5s linear infinite spinner;
+    animation-play-state: inherit;
+    border: solid 5px #777;
+    border-bottom-color: #fff;
+    border-radius: 50%;
+    content: "";
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 125px;
+    will-change: transform;
 }
 </style>
