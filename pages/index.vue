@@ -335,7 +335,7 @@
     const animate = () => {
         camera.updateProjectionMatrix()
         requestAnimationFrame(animate)
-
+        
         controls.update()
         render()
     }
@@ -347,6 +347,10 @@
         camera.updateProjectionMatrix()
 
         renderer.setSize(window.innerWidth, (window.innerHeight - navHeight))
+    }
+
+    const cameraFallAnimation = () => {
+        camera.position.set(-130, -75, 0)
     }
 
     const threejsOverlayTextColor = ref('text-white')
@@ -401,8 +405,9 @@
         </transition>
         <div id="threejs" class="flex flex-col items-center">
             <transition name="fade">
-                <div class="header-content text-white text-center mx-auto w-[85%] md:max-w-[60%] md:w-[500px] z-50">
+                <div class="header-content text-white text-center mx-auto w-[85%] md:max-w-[60%] md:w-[500px] z-50" @click="cameraFallAnimation()">
                     <Logo/>
+                    <!-- <div>{{ camera.position }}</div> -->
                     <h1 class="sr-only">Portfolio</h1>
                 </div>
             </transition>
