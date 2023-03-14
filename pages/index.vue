@@ -22,6 +22,7 @@
     })
     
     const pageContent = renderMarkdown(data.value?.basicPage?.pageContent)
+    // const pageContent = data.value?.basicPage?.pageContent
 
     // -
     // - Dev Mode??
@@ -434,10 +435,10 @@
                 <div class="leading-loose py-6" v-html="pageContent" />
                 <div class="flex flex-row flex-wrap md:w-[400px] mx-auto py-6 space-x-4">
                     <!-- <div class="w-full md:w-1/2 "> -->
-                        <NuxtLink class="flex-grow uppercase text-lg rounded-lg px-6 py-4 font-bold border-2 border-white" to="/about">About</NuxtLink>
+                        <a class="flex-grow uppercase text-lg rounded-lg px-6 py-4 font-bold border-2 border-white" href="/about">About</a>
                     <!-- </div> -->
                     <!-- <div class="w-full md:w-1/2 "> -->
-                        <NuxtLink class="flex-grow uppercase text-lg rounded-lg px-6 py-4 font-bold border-2 border-white bg-white text-sky-900" to="/portfolio">Portfolio</NuxtLink>
+                        <a class="flex-grow uppercase text-lg rounded-lg px-6 py-4 font-bold border-2 border-white bg-white text-sky-900" href="/portfolio">Portfolio</a>
                     <!-- </div> -->
                 </div>
             </div>

@@ -1,6 +1,6 @@
 <template>
     <footer class="bg-gray-900 text-white">
-        <NuxtLink to="/">HOME</NuxtLink> | <NuxtLink to="/portfolio">Portfolio</NuxtLink>
+        <a href="/">HOME</a> | <a href="/portfolio">Portfolio</a>
         <p>Footer will go here</p>
     </footer>
 </template>

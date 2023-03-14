@@ -1,6 +1,6 @@
 import { marked } from 'marked'
 
 export default function (markdown: any) {
-    const html = marked.parse(markdown)
+    const html = marked(markdown)
     return html
 }
