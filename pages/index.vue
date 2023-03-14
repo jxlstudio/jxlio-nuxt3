@@ -17,12 +17,19 @@
         layout: "homepage"
     })
 
+    const { data } = await useAsyncGql({
+        operation: 'HomePage'
+    })
+    
+    const pageContent = renderMarkdown(data.value?.basicPage?.pageContent)
+
     // -
     // - Dev Mode??
     // -
 
     // const devMode = 'yes'
-    const devMode = 'no'
+    const devMode: string = 'no'
+    const mode = checkMode()
 
     // -
     // -
@@ -42,7 +49,7 @@
     const keyLightIntensity = ref(1)
 
     const environment = computed(() => {
-        if (devMode || process.env.NODE_ENV === 'development') {
+        if (devMode === 'yes' || mode) {
             return 'development'
         }
     })
@@ -109,12 +116,12 @@
         addMoon()
         
         //Add Helpers if devmode enabled
-        if (!devMode) {
-            addHelpers()
-        }
+        // if (mode === 'development') {
+        //     addHelpers()
+        // }
 
         // Default LoadingManager Setup
-        THREE.DefaultLoadingManager.onStart = function ( url, itemsLoaded, itemsTotal ) {
+        THREE.DefaultLoadingManager.onStart = function (url: string, itemsLoaded: number | string, itemsTotal: number | string) {
             console.log( 'Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' )
         }
 
@@ -124,11 +131,11 @@
         }
 
 
-        THREE.DefaultLoadingManager.onProgress = function ( url, itemsLoaded, itemsTotal ) {
+        THREE.DefaultLoadingManager.onProgress = function (url: string, itemsLoaded: number | string, itemsTotal: number | string) {
             console.log( 'Loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' )
         }
 
-        THREE.DefaultLoadingManager.onError = function ( url ) {
+        THREE.DefaultLoadingManager.onError = function (url: string) {
             console.log( 'There was an error loading ' + url )
         }
 
@@ -343,15 +350,15 @@
     const onWindowResize = () => {
         // const whRs = getRespWindowHeight()
 
-        camera.aspect = window.innerWidth / (window.innerHeight - navHeight)
+        camera.aspect = window.innerWidth / window.innerHeight
         camera.updateProjectionMatrix()
 
-        renderer.setSize(window.innerWidth, (window.innerHeight - navHeight))
+        renderer.setSize(window.innerWidth, window.innerHeight)
     }
 
-    const cameraFallAnimation = () => {
-        camera.position.set(-130, -75, 0)
-    }
+    // const cameraFallAnimation = () => {
+    //     camera.position.set(-130, -75, 0)
+    // }
 
     const threejsOverlayTextColor = ref('text-white')
 
@@ -374,7 +381,7 @@
 
         // General Scene Parameters
         windowWidth = window.innerWidth
-        windowHeight = (window.innerHeight - navHeight)
+        windowHeight = window.innerHeight
         container = document.getElementById("threejs")
         camera = new THREE.PerspectiveCamera( 50, windowWidth / windowHeight, 1, 300 )
         clock = new THREE.Clock()
@@ -397,6 +404,7 @@
 </script>
 <template>
     <div id="homepage">
+        <!-- {{ mode }} -->
         <transition name="fade">
             <div id="loading" v-if="loadingScreen" class="bg-black absolute w-full h-full top-0 left-0 z-50">
                 <!-- <LoadingSpinner class="mx-auto mt-24 w-[48px] h-[48px] p-2 text-white z-50 spinner-center" /> -->
@@ -405,10 +413,10 @@
         </transition>
         <div id="threejs" class="flex flex-col items-center">
             <transition name="fade">
-                <div class="header-content text-white text-center mx-auto w-[85%] md:max-w-[60%] md:w-[500px] z-50" @click="cameraFallAnimation()">
+                <div class="header-content text-white text-center mx-auto w-[85%] md:max-w-[60%] md:w-[400px] z-50">
                     <Logo/>
                     <!-- <div>{{ camera.position }}</div> -->
-                    <h1 class="sr-only">Portfolio</h1>
+                    
                 </div>
             </transition>
             <transition name="fade">
@@ -419,14 +427,27 @@
                 </div>
             </transition>
         </div>
-        <div id="content" class="h-[2000px]">Content will go here</div>
+        <div id="content" class="flex flex-row items-center justify-center mx-auto min-h-screen text-center text-lg md:text-xl px-6 py-6 bg-gradient-to-b from-black via-cyan-900 to-sky-900">
+            <div class="content-wrapper max-w-prose">
+                <!-- <p>Hi, I'm Jeremy. I'm a </p> -->
+                <h2 class="text-3xl py-6 font-bold">{{ data?.basicPage?.tagline }}</h2>
+                <div class="leading-loose py-6" v-html="pageContent" />
+                <div class="flex flex-row flex-wrap md:w-[400px] mx-auto py-6 space-x-4">
+                    <!-- <div class="w-full md:w-1/2 "> -->
+                        <NuxtLink class="flex-grow uppercase text-lg rounded-lg px-6 py-4 font-bold border-2 border-white" to="/about">About</NuxtLink>
+                    <!-- </div> -->
+                    <!-- <div class="w-full md:w-1/2 "> -->
+                        <NuxtLink class="flex-grow uppercase text-lg rounded-lg px-6 py-4 font-bold border-2 border-white bg-white text-sky-900" to="/portfolio">Portfolio</NuxtLink>
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <style lang="postcss">
 #threejs {
-    min-height: 100vh;
-    background: #000000;
+    @apply min-h-screen bg-black;
 }
 #threejs canvas {
     position: relative;

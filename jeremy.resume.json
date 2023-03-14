@@ -1,0 +1,250 @@
+{
+  "meta": {
+    "theme": "elegant"
+  },
+  "basics": {
+    "name": "Jeremy Ledford",
+    "label": "Designer, Developer, Marketer",
+    "pronouns": "He/Him",
+    "picture": "",
+    "phone": "804-836-4703",
+    "email": "jeremy@jxl.io",
+    "website": "https://jxl.io",
+    "summary": "My interests, along with career necessity, led me to cultivate a diverse skillset. I am versed in front-end development, UX/UI design, print design, digital marketing, photography, branding, and more. However, my most important and sharpened skill is problem solving; I find ways to make things work. If I can't find what I'm looking for, I make it myself.",
+    "location": {
+      "city": "Richmond",
+      "region": "Virginia"
+    }
+  },
+  "work": [{
+      "name": "EcoSupply & Tekstur",
+      "position": "Marketing Director & Creative Director",
+      "startDate": "2014-09-01",
+      "summary": "Managed a small marketing team. Handled everything marketing, web development, and art direction related for over 14 brands and product lines. Rebranded the company soon after start date, then moved on to create a marketing infrastructure that revolutionized how the company did business. Helped create and brand several product lines including Tekstur, EcoCuts, Oxtops, and Decocore. Pushed hard for implementing 508/WCAG compliance in our web-based projects.",
+      "location": "Richmond, VA",
+      "highlights": [
+        "Web Design",
+        "Front-End Development",
+        "Email Marketing",
+        "CRM/SaaS Integration",
+        "Print Design",
+        "Video Production",
+        "Social Media Marketing",
+        "Product Sampling & Logistics",
+        "Trade Show Planning & Coordination",
+        "Brand Creation"
+      ]
+    },
+    {
+      "name": "The Idea Center",
+      "position": "Web Developer & Video Production Manager",
+      "startDate": "2013-09-01",
+      "endDate": "2014-09-01",
+      "summary": "Created corporate videos, designed and built Wordpress websites using Foundation and Bootstrap, social media management and design.",
+      "location": "Richmond, VA",
+      "highlights": [
+        "Web Design",
+        "Front-End Development",
+        "Graphic Design",
+        "Video Production"
+      ]
+    },
+    {
+      "name": "Self-Employed",
+      "position": "Freelancer & Independent Contractor",
+      "startDate": "2006-09-01",
+      "summary": "Freelance Photography, Graphic Design, Web Design & Development. Clients include: Tumblr, Lamitech, The Story So Far, Eco Windows & Facades, Seasonal Roots, Julian W Black Food Ingredients.",
+      "location": "Richmond, VA",
+      "highlights": [
+        "Web Design",
+        "Front-End Development",
+        "CRM/SaaS Integration",
+        "Print Design",
+        "Video Production",
+        "Social Media Marketing",
+        "Brand Creation",
+        "Portrait Photography",
+        "Wedding Photography"
+      ]
+    }
+  ],
+  "volunteer": [{
+    "organization": "VeganRVA",
+    "position": "Co-Founder",
+    "website": "https://veganrva.com",
+    "startDate": "2012-03-01",
+    "summary": "Created a resource hub for the vegan community in Richmond. Manages several other volunteers who help with content creation, social media management, and community outreach. ",
+    "highlights": ["Community Outreach", "Web Development", "App Development", "Social Media Marketing"]
+  }],
+  "skills": [
+    {
+        "name": "General",
+        "keywords": [
+            "Front-End Development",
+            "UX/UI Design",
+            "Graphic Design",
+            "SaaS/API Integrations",
+            "CRM Specific Integrations",
+            "Accessibility",
+            "Information Architecture",
+            "Workflow Design",
+            "JAMstack",
+            "Video Production",
+            "Pro Photography",
+            "3D Modeling"
+        ]
+    },
+    {
+        "name": "Frameworks",
+        "keywords": [
+            "Vue 3",
+            "Nuxt 3",
+            "Gridsome",
+            "Astro",
+            "React"
+        ]
+    },
+    {
+        "name": "Languages",
+        "keywords": [
+            "Javascript",
+            "HTML",
+            "CSS",
+            "SASS",
+            "GraphQL",
+            "PHP",
+            "Typescript"
+        ]
+    },
+    {
+        "name": "Libraries",
+        "keywords": [
+            "Three.js",
+            "TailwindCSS",
+            "Bulma",
+            "Bootstrap"
+        ]
+    },
+    {
+        "name": "Google",
+        "keywords": [
+            "Google Suite",
+            "Various API's"
+        ]
+    },
+    {
+        "name": "Adobe CC",
+        "keywords": [
+            "Illustrator",
+            "Xd",
+            "InDesign",
+            "Photoshop",
+            "Lightroom",
+            "Premiere",
+            "Acrobat"
+        ]
+    },
+    {
+        "name": "Other Platforms",
+        "keywords": [
+            "Wordpress",
+            "Netlify",
+            "Contentful",
+            "Git",
+            "Airtable",
+            "Zapier",
+            "MODx",
+            "GPT",
+            "Stable Diffusion"
+        ]
+    }
+  ],
+  "references": [{
+      "name": "**Ian Hurdle** - Director of Photography"
+    },
+    {
+      "name": "**Zach Mayo** - Data Architect"
+    },
+    {
+      "name": "**Mike Pepper** - Product Specialist"
+    },
+    {
+      "name": "**Drew Nelson** - Java Developer"
+    },
+    {
+      "name": "Contact Info Available Upon Request"
+    }
+  ],
+  "projects": [{
+      "name": "Eco Windows & Facades Branding & Website",
+      "url": "https://ecowindowsandfacades.com",
+      "startDate": "2021-04-22",
+      "highlights": ["HTML", "CSS", "Javascript", "Vue", "Gridsome", "TailwindCSS", "Zoho CRM"],
+      "roles": [
+        "Developer"
+      ]
+    },
+    {
+      "name": "Decocore Logo Design, Branding & 3D Specification Tool",
+      "url": "https://design.decocore.co/",
+      "startDate": "2020-06-22",
+      "highlights": ["Branding", "Graphic Design", "HTML", "CSS", "Javascript", "Vue", "Three.js", "Hubspot"],
+      "roles": [
+        "Developer"
+      ]
+    },
+    {
+      "name": "EcoSupply Branding & Website",
+      "url": "https://www.ecosupplycenter.com/",
+      "startDate": "2020-03-22",
+      "highlights": ["HTML", "CSS", "Javascript", "Vue", "Gridsome", "TailwindCSS", "Hubspot"],
+      "roles": [
+        "Developer"
+      ]
+    },
+    {
+      "name": "Tekstur 3D Specification Tool",
+      "url": "https://tekstur.com/pattern-tool/",
+      "startDate": "2019-02-01",
+      "highlights": ["HTML", "CSS", "Javascript", "Vue", "Three.js", "Foundation"],
+      "roles": [
+        "Developer"
+      ]
+    },
+    {
+      "name": "Tekstur Website, Branding & Art Direction",
+      "url": "https://tekstur.com/",
+      "startDate": "2015-02-01",
+      "highlights": ["HTML", "CSS", "Javascript", "Vue", "Three.js", "Foundation", "Adobe CC"],
+      "roles": [
+        "Developer"
+      ]
+    },
+    {
+      "name": "Oxtops Branding & 3D Tabletop Designer",
+      "url": "https://design.oxtops.com/",
+      "endDate": "2019-08-01",
+      "highlights": ["HTML", "CSS", "Javascript", "Vue", "Three.js", "Bulma", "Adobe CC"],
+      "roles": [
+        "Developer"
+      ]
+    },
+    {
+      "name": "Julian W. Black Industrial Food Ingredients Website",
+      "url": "http://julianwblack.com/",
+      "endDate": "2017-06-01",
+      "highlights": ["HTML", "CSS", "Javascript", "Foundation", "MODx"],
+      "roles": [
+        "Developer"
+      ]
+    }
+  ],
+  "certificates": [{
+    "name": "Hubspot Marketing Software Certification",
+    "issuer": "Hubspot",
+    "idCode": "812a25fcbc9d420cba5104e627a2d047",
+    "url": "https://hubspot-academy.s3.amazonaws.com/prod/tracks/user-certificates/812a25fcbc9d420cba5104e627a2d047-1585762397800.png",
+    "issued": "2020-04",
+    "expires": "2021-04"
+  }]
+}

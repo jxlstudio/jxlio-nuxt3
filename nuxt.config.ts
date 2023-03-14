@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindTypography from '@tailwindcss/typography'
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 export default defineNuxtConfig({
     ssr: true,
@@ -8,6 +9,15 @@ export default defineNuxtConfig({
         '@nuxtjs/tailwindcss',
         '@nuxt/content'
     ],
+    buildModules: [
+        '@nuxtjs/google-fonts'
+    ],
+    app: {
+        pageTransition: {
+            name: 'fade',
+            mode: 'out-in'
+        }
+    },
     // https://nuxt-graphql-client.web.app/getting-started/quick-start
     'graphql-client': {
         clients: {
@@ -27,9 +37,22 @@ export default defineNuxtConfig({
     },
     tailwindcss: {
         config: {
+            extend: {
+                theme: {
+                    fontFamily: {
+                        'sans': ['Lato', ...defaultTheme.fontFamily.sans]
+                    }
+                }
+            },
             plugins: [
                 tailwindTypography
             ]
+        }
+    },
+    googleFonts: {
+        download: true,
+        families: {
+            Lato: true
         }
     }
 })

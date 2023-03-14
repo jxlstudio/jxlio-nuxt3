@@ -1,0 +1,10 @@
+query HomePage {
+  basicPage(id: "4tJBp7vJJFQpXHyDR5G1VE") {
+    sys {
+      id
+    }
+    title
+    tagline
+    pageContent
+  }
+}

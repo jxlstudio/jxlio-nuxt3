@@ -1,0 +1,401 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><style>@charset "UTF-8";
+/* Workaround for 'break-before:avoid' */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+span, q {
+  display: block;
+}
+
+p {
+  margin: 0;
+}
+
+@page {
+  size: A4;
+  margin: 7mm 0 15mm 0;
+}
+@page :first {
+  margin-top: 10mm;
+}
+a {
+  color: #111111;
+  font-weight: inherit;
+  text-decoration: none;
+}
+a[href] {
+  text-decoration: underline;
+  text-decoration-color: #777777;
+}
+
+p, q {
+  line-height: 1.25em;
+}
+
+li {
+  line-height: 1.35em;
+}
+li:first-child {
+  margin-top: 0;
+}
+
+.content {
+  width: 1000px;
+  height: auto;
+  padding: 0 50px;
+  margin: 0 auto;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #111111;
+}
+
+.table {
+  width: 100%;
+  display: table;
+}
+.table .main {
+  display: table-cell;
+  width: 70%;
+  padding-right: 40px;
+}
+.table .side {
+  display: table-cell;
+  width: 30%;
+  padding-left: 40px;
+}
+
+.summary:empty {
+  display: none;
+}
+
+.section-title {
+  font-size: 26px;
+  font-weight: 900;
+  margin: 0 0 20px 0;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.margin-container-1:not(:first-child) {
+  margin-top: 10px;
+}
+
+.margin-container-2:not(:first-child) {
+  margin-top: 20px;
+}
+
+.margin-container-3:not(:first-child) {
+  margin-top: 30px;
+}
+
+.margin-container-4:not(:first-child) {
+  margin-top: 40px;
+}
+
+.padding-container-1 {
+  padding: 10px 0;
+}
+
+.padding-container-2 {
+  padding: 20px 0;
+}
+
+.padding-container-3 {
+  padding: 30px 0;
+}
+
+.padding-container-4 {
+  padding: 40px 0;
+}
+
+.margin-text-1 {
+  margin-top: 2px;
+}
+.margin-text-1:empty {
+  display: none;
+}
+
+.margin-text-2 {
+  margin-top: 4px;
+}
+.margin-text-2:empty {
+  display: none;
+}
+
+.margin-text-3 {
+  margin-top: 6px;
+}
+.margin-text-3:empty {
+  display: none;
+}
+
+.margin-text-4 {
+  margin-top: 8px;
+}
+.margin-text-4:empty {
+  display: none;
+}
+
+.margin-text-5 {
+  margin-top: 14px;
+}
+.margin-text-5:empty {
+  display: none;
+}
+
+.no-break {
+  break-inside: avoid;
+}
+
+.no-alone-1 {
+  break-inside: avoid;
+}
+.no-alone-1::after {
+  content: "";
+  display: block;
+  height: 75px;
+  margin-bottom: -75px;
+}
+
+.no-alone-2 {
+  break-inside: avoid;
+}
+.no-alone-2::after {
+  content: "";
+  display: block;
+  height: 150px;
+  margin-bottom: -150px;
+}
+
+.markdown h1 {
+  font-size: 160%;
+  font-weight: bolder;
+}
+.markdown h2 {
+  font-size: 150%;
+  font-weight: bolder;
+}
+.markdown h3 {
+  font-size: 140%;
+  font-weight: bolder;
+}
+.markdown h4 {
+  font-size: 130%;
+  font-weight: bold;
+}
+.markdown h5 {
+  font-size: 120%;
+  font-weight: bold;
+}
+.markdown h6 {
+  font-size: 110%;
+  font-weight: bold;
+}
+.markdown ul, .markdown ol {
+  margin-left: 20px;
+}
+.markdown img {
+  display: block;
+  margin: 20px auto;
+  max-width: 1000px;
+  text-align: center;
+}
+.markdown blockquote {
+  margin: 20px 0;
+  padding: 15px 20px;
+}
+.markdown blockquote p {
+  display: inline;
+}
+.markdown code {
+  font-family: monospace;
+}
+
+.main .summary {
+  font-size: 15px;
+}
+.main .highlights {
+  width: auto;
+  display: block;
+  padding: 0 10px;
+  margin-bottom: 0;
+  columns: 2;
+  column-width: 315px;
+  column-gap: 10px;
+}
+.main .highlights li {
+  font-size: 12px;
+  list-style: none;
+}
+.main .highlights li:before {
+  content: "· ";
+  vertical-align: middle;
+}
+.main .left {
+  display: table-cell;
+}
+.main .left .title {
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+}
+.main .left .subtitle {
+  font-size: 16px;
+  font-weight: lighter;
+  display: block;
+}
+.main .right {
+  text-align: right;
+  display: table-cell;
+}
+.main .right .date {
+  font-size: 15px;
+  font-weight: lighter;
+  white-space: nowrap;
+}
+
+.basics .main {
+  vertical-align: middle;
+}
+.basics .main .name {
+  font-size: 48px;
+  line-height: 1em;
+  font-weight: bold;
+  display: block;
+  margin-left: -3.36px;
+}
+.basics .main .name .pronouns {
+  display: inline-block;
+  font-size: 18px;
+  line-height: 1em;
+  padding-left: 6px;
+  color: #777;
+}
+.basics .main .label {
+  font-size: 24px;
+  line-height: 1em;
+  font-weight: lighter;
+  display: block;
+  margin-left: -0.96px;
+}
+.basics .side {
+  vertical-align: middle;
+  padding-left: 30px;
+  padding-top: 5px;
+}
+.basics .side .contact {
+  list-style-type: none;
+  font-size: 15px;
+}
+.basics .side .contact li a {
+  text-decoration: none;
+}
+.basics .summary {
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  border-bottom: 1px #cecece solid;
+}
+
+.links ul {
+  list-style: none;
+}
+.links ul li {
+  font-size: 12px;
+}
+
+.education .title {
+  font-size: 15px;
+  font-weight: bold;
+}
+.education .institution {
+  font-size: 15px;
+}
+.education .summary {
+  font-size: 12px;
+}
+
+.awards .header .title {
+  font-size: 16px;
+}
+.awards .header .awarder {
+  font-size: 15px;
+  font-weight: lighter;
+}
+.awards .summary {
+  font-size: 12px;
+}
+
+.certificates .name {
+  font-size: 15px;
+}
+.certificates .issuer {
+  font-size: 15px;
+  font-weight: lighter;
+}
+
+.skills .section-title {
+  margin: 0;
+}
+.skills .container {
+  display: block;
+  columns: 2;
+  column-gap: 10px;
+}
+.skills .container .article {
+  break-inside: avoid-column;
+  min-width: 125px;
+  padding-top: 20px;
+}
+.skills .container .article span {
+  display: block;
+  font-size: 18px;
+  font-weight: lighter;
+}
+.skills .container .article li {
+  font-size: 12px;
+  list-style: none;
+}
+
+.languages ul {
+  list-style: none;
+}
+.languages ul li {
+  font-size: 15px;
+}
+
+.interests ul {
+  list-style: none;
+}
+.interests ul li {
+  font-size: 12px;
+}
+
+.references .name {
+  font-size: 15px;
+}
+.references .reference {
+  font-size: 13.5px;
+}</style><title>Resume Jeremy Ledford – Designer, Developer, Marketer</title></head><body><div class="content"><div class="basics"><div class="table padding-container-1"><div class="main"><span class="name">Jeremy Ledford<span class="pronouns">(He/Him)</span></span><span class="label">Designer, Developer, Marketer</span></div><div class="side"><ul class="contact"><li>804-836-4703</li><li><a href="mailto:jeremy@jxl.io">jeremy@jxl.io</a></li><li>Richmond, Virginia</li></ul></div></div><div class="summary markdown"><p>My interests, along with career necessity, led me to cultivate a diverse skillset. I am versed in front-end development, UX/UI design, print design, digital marketing, photography, branding, and more. However, my most important and sharpened skill is problem solving; I find ways to make things work. If I can't find what I'm looking for, I make it myself.</p>
+</div></div><div class="table margin-container-3"><div class="main"><div class="work margin-container-4"><p class="section-title no-alone-2">Experience</p><div class="container"><div class="article margin-container-3"><div class="header no-alone-1"><div class="table"><div class="left"><span class="title">Marketing Director &amp; Creative Director</span><span class="subtitle margin-text-1"><a>EcoSupply &amp; Tekstur</a> · Richmond, VA</span></div><div class="right"><span class="date">Sep 2014 - Present</span></div></div></div><div class="summary markdown margin-text-4"><p>Managed a small marketing team. Handled everything marketing, web development, and art direction related for over 14 brands and product lines. Rebranded the company soon after start date, then moved on to create a marketing infrastructure that revolutionized how the company did business. Helped create and brand several product lines including Tekstur, EcoCuts, Oxtops, and Decocore. Pushed hard for implementing 508/WCAG compliance in our web-based projects.</p>
+</div><ul class="highlights margin-text-4 no-break"><li>Web Design</li><li>Front-End Development</li><li>Email Marketing</li><li>CRM/SaaS Integration</li><li>Print Design</li><li>Video Production</li><li>Social Media Marketing</li><li>Product Sampling &amp; Logistics</li><li>Trade Show Planning &amp; Coordination</li><li>Brand Creation</li></ul></div><div class="article margin-container-3"><div class="header no-alone-1"><div class="table"><div class="left"><span class="title">Web Developer &amp; Video Production Manager</span><span class="subtitle margin-text-1"><a>The Idea Center</a> · Richmond, VA</span></div><div class="right"><span class="date">Sep 2013 - Sep 2014</span></div></div></div><div class="summary markdown margin-text-4"><p>Created corporate videos, designed and built Wordpress websites using Foundation and Bootstrap, social media management and design.</p>
+</div><ul class="highlights margin-text-4 no-break"><li>Web Design</li><li>Front-End Development</li><li>Graphic Design</li><li>Video Production</li></ul></div><div class="article margin-container-3"><div class="header no-alone-1"><div class="table"><div class="left"><span class="title">Freelancer &amp; Independent Contractor</span><span class="subtitle margin-text-1"><a>Self-Employed</a> · Richmond, VA</span></div><div class="right"><span class="date">Sep 2006 - Present</span></div></div></div><div class="summary markdown margin-text-4"><p>Freelance Photography, Graphic Design, Web Design &amp; Development. Clients include: Tumblr, Lamitech, The Story So Far, Eco Windows &amp; Facades, Seasonal Roots, Julian W Black Food Ingredients.</p>
+</div><ul class="highlights margin-text-4 no-break"><li>Web Design</li><li>Front-End Development</li><li>CRM/SaaS Integration</li><li>Print Design</li><li>Video Production</li><li>Social Media Marketing</li><li>Brand Creation</li><li>Portrait Photography</li><li>Wedding Photography</li></ul></div></div></div><div class="volunteer margin-container-4"><p class="section-title no-alone-2">Volunteering</p><div class="container"><div class="article margin-container-3"><div class="header no-alone-1"><div class="table"><div class="left"><span class="title">Co-Founder</span><span class="subtitle margin-text-1"><a>VeganRVA</a></span></div><div class="right"><span class="date">Mar 2012 - Present</span></div></div></div><div class="summary markdown margin-text-4"><p>Created a resource hub for the vegan community in Richmond. Manages several other volunteers who help with content creation, social media management, and community outreach.</p>
+</div><ul class="highlights margin-text-4 no-break"><li>Community Outreach</li><li>Web Development</li><li>App Development</li><li>Social Media Marketing</li></ul></div></div></div><div class="certificates margin-container-4"><p class="section-title no-alone-1">Certificates</p><div class="container"><div class="article margin-container-1 no-break"><div class="name markdown"><a href="https://hubspot-academy.s3.amazonaws.com/prod/tracks/user-certificates/812a25fcbc9d420cba5104e627a2d047-1585762397800.png"><p>Hubspot Marketing Software Certification - Hubspot</p>
+</a></div><span class="issuer margin-text-2"><p>Expires Apr 2021</p>
+</span></div></div></div><div class="projects margin-container-4"><p class="section-title no-alone-2">Projects</p><div class="container"><div class="article margin-container-3"><div class="header no-alone-1"><div class="table"><div class="left"><span class="title">Developer</span><span class="subtitle margin-text-1"><a href="https://ecowindowsandfacades.com">Eco Windows &amp; Facades Branding &amp; Website</a></span></div><div class="right"><span class="date">Apr 2021 - Present</span></div></div></div><div class="summary markdown margin-text-4"></div><ul class="highlights margin-text-4 no-break"><li>HTML</li><li>CSS</li><li>Javascript</li><li>Vue</li><li>Gridsome</li><li>TailwindCSS</li><li>Zoho CRM</li></ul></div><div class="article margin-container-3"><div class="header no-alone-1"><div class="table"><div class="left"><span class="title">Developer</span><span class="subtitle margin-text-1"><a href="https://design.decocore.co/">Decocore Logo Design, Branding &amp; 3D Specification Tool</a></span></div><div class="right"><span class="date">Jun 2020 - Present</span></div></div></div><div class="summary markdown margin-text-4"></div><ul class="highlights margin-text-4 no-break"><li>Branding</li><li>Graphic Design</li><li>HTML</li><li>CSS</li><li>Javascript</li><li>Vue</li><li>Three.js</li><li>Hubspot</li></ul></div><div class="article margin-container-3"><div class="header no-alone-1"><div class="table"><div class="left"><span class="title">Developer</span><span class="subtitle margin-text-1"><a href="https://www.ecosupplycenter.com/">EcoSupply Branding &amp; Website</a></span></div><div class="right"><span class="date">Mar 2020 - Present</span></div></div></div><div class="summary markdown margin-text-4"></div><ul class="highlights margin-text-4 no-break"><li>HTML</li><li>CSS</li><li>Javascript</li><li>Vue</li><li>Gridsome</li><li>TailwindCSS</li><li>Hubspot</li></ul></div><div class="article margin-container-3"><div class="header no-alone-1"><div class="table"><div class="left"><span class="title">Developer</span><span class="subtitle margin-text-1"><a href="https://tekstur.com/pattern-tool/">Tekstur 3D Specification Tool</a></span></div><div class="right"><span class="date">Feb 2019 - Present</span></div></div></div><div class="summary markdown margin-text-4"></div><ul class="highlights margin-text-4 no-break"><li>HTML</li><li>CSS</li><li>Javascript</li><li>Vue</li><li>Three.js</li><li>Foundation</li></ul></div><div class="article margin-container-3"><div class="header no-alone-1"><div class="table"><div class="left"><span class="title">Developer</span><span class="subtitle margin-text-1"><a href="https://tekstur.com/">Tekstur Website, Branding &amp; Art Direction</a></span></div><div class="right"><span class="date">Feb 2015 - Present</span></div></div></div><div class="summary markdown margin-text-4"></div><ul class="highlights margin-text-4 no-break"><li>HTML</li><li>CSS</li><li>Javascript</li><li>Vue</li><li>Three.js</li><li>Foundation</li><li>Adobe CC</li></ul></div><div class="article margin-container-3"><div class="header no-alone-1"><div class="table"><div class="left"><span class="title">Developer</span><span class="subtitle margin-text-1"><a href="https://design.oxtops.com/">Oxtops Branding &amp; 3D Tabletop Designer</a></span></div><div class="right"><span class="date">Aug 2019</span></div></div></div><div class="summary markdown margin-text-4"></div><ul class="highlights margin-text-4 no-break"><li>HTML</li><li>CSS</li><li>Javascript</li><li>Vue</li><li>Three.js</li><li>Bulma</li><li>Adobe CC</li></ul></div><div class="article margin-container-3"><div class="header no-alone-1"><div class="table"><div class="left"><span class="title">Developer</span><span class="subtitle margin-text-1"><a href="http://julianwblack.com/">Julian W. Black Industrial Food Ingredients Website</a></span></div><div class="right"><span class="date">Jun 2017</span></div></div></div><div class="summary markdown margin-text-4"></div><ul class="highlights margin-text-4 no-break"><li>HTML</li><li>CSS</li><li>Javascript</li><li>Foundation</li><li>MODx</li></ul></div></div></div></div><div class="side"><div class="skills margin-container-4"><p class="section-title no-alone-1">Technical Skills</p><div class="container"><div class="article no-break"><span>General</span><ul class="margin-text-2"><li>Front-End Development</li><li>UX/UI Design</li><li>Graphic Design</li><li>SaaS/API Integrations</li><li>CRM Specific Integrations</li><li>Accessibility</li><li>Information Architecture</li><li>Workflow Design</li><li>JAMstack</li><li>Video Production</li><li>Pro Photography</li><li>3D Modeling</li></ul></div><div class="article no-break"><span>Frameworks</span><ul class="margin-text-2"><li>Vue 3</li><li>Nuxt 3</li><li>Gridsome</li><li>Astro</li><li>React</li></ul></div><div class="article no-break"><span>Languages</span><ul class="margin-text-2"><li>Javascript</li><li>HTML</li><li>CSS</li><li>SASS</li><li>GraphQL</li><li>PHP</li><li>Typescript</li></ul></div><div class="article no-break"><span>Libraries</span><ul class="margin-text-2"><li>Three.js</li><li>TailwindCSS</li><li>Bulma</li><li>Bootstrap</li></ul></div><div class="article no-break"><span>Google</span><ul class="margin-text-2"><li>Google Suite</li><li>Various API's</li></ul></div><div class="article no-break"><span>Adobe CC</span><ul class="margin-text-2"><li>Illustrator</li><li>Xd</li><li>InDesign</li><li>Photoshop</li><li>Lightroom</li><li>Premiere</li><li>Acrobat</li></ul></div><div class="article no-break"><span>Other Platforms</span><ul class="margin-text-2"><li>Wordpress</li><li>Netlify</li><li>Contentful</li><li>Git</li><li>Airtable</li><li>Zapier</li><li>MODx</li><li>GPT</li><li>Stable Diffusion</li></ul></div></div></div><div class="references margin-container-4"><p class="section-title no-alone-2">References</p><div class="container"><div class="article margin-container-1 no-break"><span class="name"><p><strong>Ian Hurdle</strong> - Director of Photography</p>
+</span><span class="reference margin-text-2"></span></div><div class="article margin-container-1 no-break"><span class="name"><p><strong>Zach Mayo</strong> - Data Architect</p>
+</span><span class="reference margin-text-2"></span></div><div class="article margin-container-1 no-break"><span class="name"><p><strong>Mike Pepper</strong> - Product Specialist</p>
+</span><span class="reference margin-text-2"></span></div><div class="article margin-container-1 no-break"><span class="name"><p><strong>Drew Nelson</strong> - Java Developer</p>
+</span><span class="reference margin-text-2"></span></div><div class="article margin-container-1 no-break"><span class="name"><p>Contact Info Available Upon Request</p>
+</span><span class="reference margin-text-2"></span></div></div></div></div></div></div></body></html>
